@@ -1,0 +1,143 @@
+@import url('https://fonts.googleapis.com/css?family=Lato|Montserrat:500');
+@import url('./reset.css');
+
+:root {
+  --font-family-header: 'Montserrat', sans-serif;
+  --font-family-body:   'Lato', serif;
+
+  /*denim*/
+  --primary: hsla(210, 79%, 46%, 1);
+  /*malibu*/
+  --primary-light: hsla(215, 100%, 69%, 1);
+  /*dark colbalt*/
+  --primary-dark: hsla(212, 100%, 31%, 1);
+  /*sazerac*/
+  --secondary: hsl(37, 100%, 94%);
+  /*dark amber*/
+  --secondary-dark: hsla(36, 23%, 74%, 1);
+  --border: thin solid black;
+
+  --grid-gap: 8px;
+  --grid-cells: 12;
+  --grid-size-portrait: 100vw;
+  --grid-size-landscape: 100vh;
+}
+
+
+#main {
+  display: grid;
+  grid-gap: var(--grid-gap);
+
+  height: 100vh;
+  width: 100vw;
+
+  align-items: center;
+  justify-content: center;
+
+  background-color: var(--primary);
+}
+
+
+#menu {
+  grid-area: menu;
+
+  border: var(--border);
+}
+
+#logo {
+  grid-area: logo;
+  height: var(--font-size-header);
+
+  font-family: var(--font-family-header);
+  font-size: var(--font-size-header);
+
+  text-align: right;
+
+  line-spacing: var(--line-spacing-header);
+  letter-spacing: var(--letter-spacing-header);
+}
+
+#input {
+  grid-area: input;
+
+  font-size: var(--font-size-header);
+  font-family: var(--font-family-body);
+
+  letter-spacing: var(--letter-spacing-header);
+}
+
+#search {
+  grid-area: search;
+
+  border: var(--border);
+}
+
+#copyright {
+  grid-area: copyright;
+  height: var(--font-size-body);
+
+  font-family: var(--font-family-body);
+  font-size: var(--font-size-body);
+
+  text-align: center;
+
+  letter-spacing: var(--letter-spacing-body);
+}
+
+@media only screen and (orientation: portrait) {
+  #main {
+
+    --font-size-header: 4.5vw;
+    --font-size-body: 2.5vw;
+
+    --letter-spacing-header: 1vw;
+    --letter-spacing-body: 1.4vw;
+
+    grid-auto-rows: calc(var(--grid-size-portrait) / var(--grid-cells) - var(--grid-gap));
+    grid-template-columns: repeat( var(--grid-cells), calc(var(--grid-size-portrait) / var(--grid-cells) - var(--grid-gap)));
+    grid-template-areas:
+    ".         .         .         .         .         .         .         .         .         .         .         .          "
+    ".         .         .         .         .         .         .         .         .         .         .         .          "
+    ".         .         menu      logo      logo      logo      logo      logo      logo      logo      .         .          "
+    ".         .         .         .         .         .         .         .         .         .         .         .          "
+    ".         .         input     input     input     input     input     input     input     search    .         .          "
+    ".         .         .         .         .         .         .         .         .         .         .         .          "
+    ".         .         .         .         .         .         .         .         .         .         .         .          "
+    ".         .         .         .         .         .         .         .         .         .         .         .          "
+    ".         .         .         .         .         .         .         .         .         .         .         .          "
+    ".         .         .         .         .         .         .         .         .         .         .         .          "
+    ".         .         .         .         .         .         .         .         .         .         .         .          "
+    ".         .         .         .         .         .         .         .         .         .         .         .          "
+    ".         .         .         .         .         .         .         .         .         .         .         .          "
+    ".         .         copyright copyright copyright copyright copyright copyright copyright copyright .         .          "
+    ".         .         .         .         .         .         .         .         .         .         .         .          "
+    ".         .         .         .         .         .         .         .         .         .         .         .          "
+    ;
+
+  }
+}
+
+@media only screen and (orientation: landscape) {
+  #main {
+
+    --font-size-header: 9vh;
+    --font-size-body: 2.5vh;
+
+    --letter-spacing-header: 0vh;
+    --letter-spacing-body: 3.2vh;
+
+    grid-auto-rows: calc(var(--grid-size-landscape) / var(--grid-cells) - var(--grid-gap));
+    grid-template-columns: repeat( var(--grid-cells), calc(var(--grid-size-landscape) / var(--grid-cells) - var(--grid-gap)));
+    grid-template-areas:
+    ".         .         .         .         .         .         .         .         .          .         .         .         "
+    ".         menu      logo      logo      logo      logo      logo      logo      logo       logo      logo      .         "
+    ".         .         .         .         .         .         .         .         .          .         .         .         "
+    ".         input     input     input     input     input     input     input     input      input     search    .         "
+    ".         .         .         .         .         .         .         .         .          .         .         .         "
+    ".         .         .         .         .         .         .         .         .          .         .         .         "
+    ".         .         .         .         .         .         .         .         .          .         .         .         "
+    ".         .         .         .         .         .         .         .         .          .         .         .         "
+    ".         copyright copyright copyright copyright copyright copyright copyright copyright  copyright copyright .         ";
+
+  }
+}
