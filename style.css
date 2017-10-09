@@ -59,6 +59,7 @@
 
 #input {
   grid-area: input;
+  height: var(--font-size-header);
 
   font-size: var(--font-size-header);
   font-family: var(--font-family-body);
@@ -87,11 +88,11 @@
 @media only screen and (orientation: portrait) {
   #main {
 
-    --font-size-header: 4.5vw;
+    --font-size-header: 7vw;
     --font-size-body: 2.5vw;
 
-    --letter-spacing-header: 1vw;
-    --letter-spacing-body: 1.4vw;
+    --letter-spacing-header: 0.5vw;
+    --letter-spacing-body: 2vw;
 
     grid-auto-rows: calc(var(--grid-size-portrait) / var(--grid-cells) - var(--grid-gap));
     grid-template-columns: repeat( var(--grid-cells), calc(var(--grid-size-portrait) / var(--grid-cells) - var(--grid-gap)));
@@ -109,8 +110,8 @@
     ".         .         .         .         .         .         .         .         .         .         .         .          "
     ".         .         .         .         .         .         .         .         .         .         .         .          "
     ".         .         .         .         .         .         .         .         .         .         .         .          "
-    ".         .         copyright copyright copyright copyright copyright copyright copyright copyright .         .          "
     ".         .         .         .         .         .         .         .         .         .         .         .          "
+    ".         .         copyright copyright copyright copyright copyright copyright copyright copyright .         .          "
     ".         .         .         .         .         .         .         .         .         .         .         .          "
     ;
 
@@ -120,11 +121,11 @@
 @media only screen and (orientation: landscape) {
   #main {
 
-    --font-size-header: 9vh;
+    --font-size-header: 7vh;
     --font-size-body: 2.5vh;
 
-    --letter-spacing-header: 0vh;
-    --letter-spacing-body: 3.2vh;
+    --letter-spacing-header: 0.5vh;
+    --letter-spacing-body: 2vh;
 
     grid-auto-rows: calc(var(--grid-size-landscape) / var(--grid-cells) - var(--grid-gap));
     grid-template-columns: repeat( var(--grid-cells), calc(var(--grid-size-landscape) / var(--grid-cells) - var(--grid-gap)));
@@ -133,6 +134,8 @@
     ".         menu      logo      logo      logo      logo      logo      logo      logo       logo      logo      .         "
     ".         .         .         .         .         .         .         .         .          .         .         .         "
     ".         input     input     input     input     input     input     input     input      input     search    .         "
+    ".         .         .         .         .         .         .         .         .          .         .         .         "
+    ".         .         .         .         .         .         .         .         .          .         .         .         "
     ".         .         .         .         .         .         .         .         .          .         .         .         "
     ".         .         .         .         .         .         .         .         .          .         .         .         "
     ".         .         .         .         .         .         .         .         .          .         .         .         "
