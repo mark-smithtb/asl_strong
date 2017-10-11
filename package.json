@@ -57,7 +57,7 @@
     "npm": "^3.10.6",
     "object.assign": "^4.0.4",
     "prop-types": "^15.5.9",
-    "react": "^15.5.4",
+    "react": "^16.0.0",
     "react-addons-update": "^15.4.1",
     "react-bootstrap": "^0.30.2",
     "react-bootstrap-maskedinput": "^0.2.1",
@@ -65,8 +65,10 @@
     "react-dom": "^15.5.0",
     "react-native-button": "^1.8.2",
     "react-popup": "^0.4.2",
+    "react-redux": "^5.0.6",
     "react-router": "^2.6.1",
+    "redux": "^3.7.2",
     "superagent": "^2.2.0",
-    "superagent-auth-bearer": "0.0.1",
+    "superagent-auth-bearer": "0.0.1"
   }
 }

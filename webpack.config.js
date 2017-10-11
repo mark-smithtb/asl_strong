@@ -1,12 +1,12 @@
-var path = require('path');
-var webpack = require('webpack');
-var HtmlWebpackPlugin = require('html-webpack-plugin');
-var node_modules_dir = path.resolve(__dirname, 'node_modules');
+const path = require('path');
+const webpack = require('webpack');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const node_modules_dir = path.resolve(__dirname, 'node_modules');
 
 //Dashboard
-var Dashboard = require('webpack-dashboard');
-var DashboardPlugin = require('webpack-dashboard/plugin');
-var dashboard = new Dashboard();
+const Dashboard = require('webpack-dashboard');
+const DashboardPlugin = require('webpack-dashboard/plugin');
+const dashboard = new Dashboard();
 
 module.exports = {
   context: __dirname + "/baycare",
@@ -27,8 +27,8 @@ module.exports = {
 
   resolve: {
     root: [
-      __dirname + "baycare/",
-      path.resolve(__dirname, "baycare/js/"),
+      __dirname + "/aslstrong/",
+      path.resolve(__dirname, "/aslstrong/js/"),
   ],
     extensions: ['', '.js']
   },
@@ -39,7 +39,7 @@ module.exports = {
 
   output: {
     path: path.resolve(__dirname, 'dist'),
-    filename: "[name].js",
+    filename: "/[name].js",
   },
 
   module: {
@@ -65,11 +65,11 @@ module.exports = {
       // Fonts
       {
         test: /\.(woff|woff2)(\?v=\d+\.\d+\.\d+)?$/,
-        loader: "url-loader?limit=8192&minetype=application/font-woff"
+        loader: "url-loader?limit=8192&minetype=application/font-woff&name=/[name].[ext]"
       },
       {
         test: /\.ttf(\?v=\d+\.\d+\.\d+)?$/,
-        loader: "url-loader?limit=8192&minetype=application/octet-stream"
+        loader: "url-loader?limit=8192&minetype=application/octet-stream&name=/[name].[ext]"
       },
       {
         test: /\.eot(\?v=\d+\.\d+\.\d+)?$/,
@@ -89,12 +89,12 @@ module.exports = {
   plugins: [
     new webpack.optimize.CommonsChunkPlugin({
       name: "vendors",
-      filename: "vendors.js",
+      filename: "/vendors.js",
       minChunks: 2,
     }),
     new webpack.optimize.UglifyJsPlugin(),
     new HtmlWebpackPlugin({
-      title: 'Baycare HealthNav',
+      title: 'BayCare HealthNav',
       template: 'index.ejs',
     }),
     new DashboardPlugin(dashboard.setData),
@@ -109,6 +109,5 @@ module.exports = {
   devServer: {
     contentBase: "./baycare",
     historyApiFallback: true
-
   }
 };
