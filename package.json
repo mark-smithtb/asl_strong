@@ -1,0 +1,72 @@
+{
+  "name": "asl-strong-web",
+  "version": "0.0.1",
+  "private": true,
+  "description": "ASL Strong Web front end",
+  "main": "aslStron/js/app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "webpack-dev-server --hot --quiet --inline --host=0.0.0.0 --https",
+    "build": "webpack --optimize-minimize --progress -p"
+  },
+  "keywords": [
+    "ASL Strong"
+  ],
+  "author": "ASL Strong",
+  "license": "MIT",
+  "babel": {
+    "presets": [
+      "es2015",
+      "react"
+    ]
+  },
+  "devDependencies": {
+    "babel": "^6.5.2",
+    "babel-core": "^6.13.2",
+    "babel-loader": "^6.2.4",
+    "babel-preset-es2015": "^6.13.2",
+    "babel-preset-react": "^6.11.1",
+    "css-loader": "^0.23.1",
+    "html-webpack-plugin": "^2.22.0",
+    "node-sass": "^3.8.0",
+    "react-hot-loader": "^1.3.0",
+    "resolve-url-loader": "^1.6.0",
+    "sass-loader": "^4.0.0",
+    "style-loader": "^0.13.1",
+    "url-loader": "^0.5.7",
+    "webpack": "^1.13.2",
+    "webpack-dashboard": "0.0.1",
+    "webpack-dev-server": "^1.16.2"
+  },
+  "dependencies": {
+    "bootstrap": "^3.3.7",
+    "bootstrap-webpack": "0.0.5",
+    "class-name": "^0.1.3",
+    "classnames": "^2.2.5",
+    "create-react-class": "^15.5.0",
+    "exports-loader": "^0.6.3",
+    "extract-text-webpack-plugin": "^1.0.1",
+    "file-loader": "^0.9.0",
+    "flux": "^2.1.1",
+    "imports-loader": "^0.7.0",
+    "install": "^0.8.1",
+    "javascript-debounce": "^1.0.0",
+    "keymirror": "^0.1.1",
+    "less": "^2.7.1",
+    "less-loader": "^2.2.3",
+    "npm": "^3.10.6",
+    "object.assign": "^4.0.4",
+    "prop-types": "^15.5.9",
+    "react": "^15.5.4",
+    "react-addons-update": "^15.4.1",
+    "react-bootstrap": "^0.30.2",
+    "react-bootstrap-maskedinput": "^0.2.1",
+    "react-debounce-input": "^3.0.0",
+    "react-dom": "^15.5.0",
+    "react-native-button": "^1.8.2",
+    "react-popup": "^0.4.2",
+    "react-router": "^2.6.1",
+    "superagent": "^2.2.0",
+    "superagent-auth-bearer": "0.0.1",
+  }
+}
