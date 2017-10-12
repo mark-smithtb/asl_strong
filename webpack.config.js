@@ -9,7 +9,7 @@ const DashboardPlugin = require('webpack-dashboard/plugin');
 const dashboard = new Dashboard();
 
 module.exports = {
-  context: __dirname + "/baycare",
+  context: __dirname + "/aslstrong",
 
   entry: {
     baycare: [
@@ -94,7 +94,7 @@ module.exports = {
     }),
     new webpack.optimize.UglifyJsPlugin(),
     new HtmlWebpackPlugin({
-      title: 'BayCare HealthNav',
+      title: 'ASL Strong',
       template: 'index.ejs',
     }),
     new DashboardPlugin(dashboard.setData),
@@ -107,7 +107,7 @@ module.exports = {
 
   // Development
   devServer: {
-    contentBase: "./baycare",
+    contentBase: "./aslstrong",
     historyApiFallback: true
   }
 };
