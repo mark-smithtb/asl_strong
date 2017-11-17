@@ -1,146 +1,141 @@
-@import url('https://fonts.googleapis.com/css?family=Lato|Montserrat:500');
-@import url('./reset.css');
-
-:root {
-  --font-family-header: 'Montserrat', sans-serif;
-  --font-family-body:   'Lato', serif;
-
-  /*denim*/
-  --primary: hsla(210, 79%, 46%, 1);
-  /*malibu*/
-  --primary-light: hsla(215, 100%, 69%, 1);
-  /*dark colbalt*/
-  --primary-dark: hsla(212, 100%, 31%, 1);
-  /*sazerac*/
-  --secondary: hsl(37, 100%, 94%);
-  /*dark amber*/
-  --secondary-dark: hsla(36, 23%, 74%, 1);
-  --border: thin solid black;
-
-  --grid-gap: 8px;
-  --grid-cells: 12;
-  --grid-size-portrait: 100vw;
-  --grid-size-landscape: 100vh;
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  background-color: #99bcd1;
+}
+a {
+  color: black;
 }
 
+li {
+  list-style: none;
+}
 
-#main {
-  display: grid;
-  grid-gap: var(--grid-gap);
+header {
+  background-color: #006bad;
+  display: flex;
+  justify-content: flex-start;
+  padding: 0.5em;
+  align-items: center;
+}
+header > h1 {
+  padding-left: 1em;
+}
 
-  height: 100vh;
-  width: 100vw;
+section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
+footer {
+  background-color: #006bad;
+  font-size: 2em;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.sideMenu {
+  padding: 0.5em 0 0 1.5em;
+  width: 25em;
+}
+.sideMenu > ul {
+  width: 16.75em;
+}
+.sideMenu > ul > li {
+  padding: 0.25em;
+  font-size: 1.75em;
+}
+.sideMenu > ul > li > a:hover {
+  color: #371b72;
+}
+.contentBody {
+  height: 85vh;
+  display: flex;
+}
+.searchBar {
+  padding-left: 2em;
+  display: flex;
   align-items: center;
   justify-content: center;
-
-  background-color: var(--primary);
 }
-
-
-#menu {
-  grid-area: menu;
-
-  border: var(--border);
+form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
-
-#logo {
-  grid-area: logo;
-  height: var(--font-size-header);
-
-  font-family: var(--font-family-header);
-  font-size: var(--font-size-header);
-
-  text-align: right;
-
-  line-spacing: var(--line-spacing-header);
-  letter-spacing: var(--letter-spacing-header);
+input[type="text"] {
+  width: 70%;
+  font-size: 2em;
+  border-radius: 8px;
 }
-
-#input {
-  grid-area: input;
-  height: var(--font-size-header);
-
-  font-size: var(--font-size-header);
-  font-family: var(--font-family-body);
-
-  letter-spacing: var(--letter-spacing-header);
-}
-
-#search {
-  grid-area: search;
-
-  border: var(--border);
-}
-
-#copyright {
-  grid-area: copyright;
-  height: var(--font-size-body);
-
-  font-family: var(--font-family-body);
-  font-size: var(--font-size-body);
-
+.categories {
   text-align: center;
-
-  letter-spacing: var(--letter-spacing-body);
 }
 
-@media only screen and (orientation: portrait) {
-  #main {
-
-    --font-size-header: 7vw;
-    --font-size-body: 2.5vw;
-
-    --letter-spacing-header: 0.5vw;
-    --letter-spacing-body: 2vw;
-
-    grid-auto-rows: calc(var(--grid-size-portrait) / var(--grid-cells) - var(--grid-gap));
-    grid-template-columns: repeat( var(--grid-cells), calc(var(--grid-size-portrait) / var(--grid-cells) - var(--grid-gap)));
-    grid-template-areas:
-    ".         .         .         .         .         .         .         .         .         .         .         .          "
-    ".         .         .         .         .         .         .         .         .         .         .         .          "
-    ".         .         menu      logo      logo      logo      logo      logo      logo      logo      .         .          "
-    ".         .         .         .         .         .         .         .         .         .         .         .          "
-    ".         .         input     input     input     input     input     input     input     search    .         .          "
-    ".         .         .         .         .         .         .         .         .         .         .         .          "
-    ".         .         .         .         .         .         .         .         .         .         .         .          "
-    ".         .         .         .         .         .         .         .         .         .         .         .          "
-    ".         .         .         .         .         .         .         .         .         .         .         .          "
-    ".         .         .         .         .         .         .         .         .         .         .         .          "
-    ".         .         .         .         .         .         .         .         .         .         .         .          "
-    ".         .         .         .         .         .         .         .         .         .         .         .          "
-    ".         .         .         .         .         .         .         .         .         .         .         .          "
-    ".         .         .         .         .         .         .         .         .         .         .         .          "
-    ".         .         copyright copyright copyright copyright copyright copyright copyright copyright .         .          "
-    ".         .         .         .         .         .         .         .         .         .         .         .          "
-    ;
-
-  }
+.categories > button {
+  font-size: 2em;
+  width: 7em;
+  border-radius: 8px;
+  background-color: #c7f5ff;
+  margin: 0.1em;
 }
-
-@media only screen and (orientation: landscape) {
-  #main {
-
-    --font-size-header: 7vh;
-    --font-size-body: 2.5vh;
-
-    --letter-spacing-header: 0.5vh;
-    --letter-spacing-body: 2vh;
-
-    grid-auto-rows: calc(var(--grid-size-landscape) / var(--grid-cells) - var(--grid-gap));
-    grid-template-columns: repeat( var(--grid-cells), calc(var(--grid-size-landscape) / var(--grid-cells) - var(--grid-gap)));
-    grid-template-areas:
-    ".         .         .         .         .         .         .         .         .          .         .         .         "
-    ".         menu      logo      logo      logo      logo      logo      logo      logo       logo      logo      .         "
-    ".         .         .         .         .         .         .         .         .          .         .         .         "
-    ".         input     input     input     input     input     input     input     input      input     search    .         "
-    ".         .         .         .         .         .         .         .         .          .         .         .         "
-    ".         .         .         .         .         .         .         .         .          .         .         .         "
-    ".         .         .         .         .         .         .         .         .          .         .         .         "
-    ".         .         .         .         .         .         .         .         .          .         .         .         "
-    ".         .         .         .         .         .         .         .         .          .         .         .         "
-    ".         .         .         .         .         .         .         .         .          .         .         .         "
-    ".         copyright copyright copyright copyright copyright copyright copyright copyright  copyright copyright .         ";
-
-  }
+.categories > button > a {
+  text-decoration: none;
+}
+h2 {
+  font-size: 3em;
+  text-align: center;
+}
+.englishButtons {
+  display: flex;
+  text-align: center;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.englishButtons > li {
+  border-style: groove;
+  border-width: 1.5px;
+  border-color: black;
+  font-size: 2em;
+  background-color: #c7f5ff;
+  margin: 0;
+  font-weight: bold;
+  width: 1.15em;
+}
+#soon {
+  color: darkred;
+  font-size: 4em;
+  font-weight: bold;
+  padding-top: 3em;
+  padding-left: 3em;
+}
+.soon {
+  display: flex;
+  flex-direction: column;
+}
+.soon > p {
+  font-size: 2em;
+}
+.soon > h6 {
+  font-size: 3em;
+}
+.soon > h5 {
+  font-size: 2em;
+  font-weight: normal;
+}
+.wordList {
+  margin-top: 3em;
+  border-style: solid;
+  height: 15em;
+  overflow: scroll;
+  font-size: 1.5em;
+  padding: 0.75em;
+}
+.wordList > ul > li {
+  padding: 0.05em;
 }

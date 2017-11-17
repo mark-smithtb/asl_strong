@@ -1,10 +1,7 @@
 import request from 'superagent';
-require('superagent-auth-bearer')(request);
 
 import ApiConstants from '../constants/ApiConstants';
-import CredentialStore from '../stores/CredentialStore';
 
-let authErrorMessage = "You are not authorized for that action.";
 
 function getUrlForPath(path) {
   return `${ApiConstants.API_URL}${path}`;
@@ -20,7 +17,6 @@ var Api = {
     return new Promise(function(resolve, reject) {
       request
         .get(getUrlForPath(path))
-        .authBearer(CredentialStore.getJWT())
         .set('Accept', 'application/json')
         .end(function(error, response) {
           if (error){
@@ -37,7 +33,6 @@ var Api = {
     return new Promise((resolve, reject) => {
       request
         .post(getUrlForPath(path))
-        .authBearer(CredentialStore.getJWT())
         .type('application/json')
         .send(data)
         .end(function(error, response) {
@@ -55,7 +50,6 @@ var Api = {
     return new Promise(function(resolve, reject) {
       request
         .put(getUrlForPath(path))
-        .authBearer(CredentialStore.getJWT())
         .type('application/json')
         .send(data)
         .end(function(error, response) {
@@ -73,7 +67,6 @@ var Api = {
     return new Promise(function(resolve, reject) {
       request
         .delete(getUrlForPath(path))
-        .authBearer(CredentialStore.getJWT())
         .type('application/json')
         .end(function(error, response) {
           if (error){
