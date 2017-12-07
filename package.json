@@ -6,7 +6,7 @@
   "main": "aslStron/js/app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "webpack-dev-server --quiet --inline --host=0.0.0.0",
+    "start": "webpack-dev-server --inline --host=0.0.0.0",
     "build": "webpack --optimize-minimize --progress -p"
   },
   "keywords": [

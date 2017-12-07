@@ -3,10 +3,6 @@ const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const node_modules_dir = path.resolve(__dirname, 'node_modules');
 
-//Dashboard
-const Dashboard = require('webpack-dashboard');
-const DashboardPlugin = require('webpack-dashboard/plugin');
-const dashboard = new Dashboard();
 
 module.exports = {
   context: __dirname + "/aslstrong",
@@ -97,7 +93,6 @@ module.exports = {
       title: 'ASL Strong',
       template: 'index.ejs',
     }),
-    new DashboardPlugin(dashboard.setData),
     new webpack.DefinePlugin({
       "process.env": {
          NODE_ENV: JSON.stringify("production")
